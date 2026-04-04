@@ -1,18 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext"; // (you should move it here ideally)
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
-// import Products from "./pages/Products/Products";
-// import Cart from "./pages/Cart/Cart";
+import CheckoutPage from "./pages/Cart/CheckoutPage";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} /> */}
-      </Routes>
-    </Router>
+    <CartProvider>   {/* ✅ GLOBAL */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
