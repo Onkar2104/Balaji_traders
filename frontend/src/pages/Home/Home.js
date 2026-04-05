@@ -53,7 +53,11 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
         {cart.map((item) => (
           <div key={item.id} className="flex gap-3 items-center border-b pb-3">
-            <img src={images[item.image]} className="w-12 h-12 object-contain" />
+            <img
+              src={images[item.image]}
+              alt={item.name || "product image"}
+              className="w-12 h-12 object-contain"
+            />
 
             <div className="flex-1">
               <h4 className="text-sm font-medium">{item.name}</h4>
@@ -100,7 +104,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
     <>
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-white shadow-sm border-b border-green-100">
-        
+
 
         {/* OVERLAY */}
         {isMobileMenuOpen && (
@@ -273,9 +277,9 @@ const FeaturedProducts = ({ searchTerm }) => {
   const scrollRef = useRef(null);
 
   const filteredProducts = products.filter((product) =>
-  product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-  product.category.toLowerCase().includes(searchTerm.toLowerCase())
-);
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const scrollLeft = () => {
     if (scrollRef.current) {
