@@ -466,10 +466,11 @@ const Footer = () => (
 // ==========================================
 // 4. MAIN EXPORT COMPONENT
 // ==========================================
-import { useLocation } from "react-router-dom";
+
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
     ReactGA.send({
