@@ -466,16 +466,19 @@ const Footer = () => (
 // ==========================================
 // 4. MAIN EXPORT COMPONENT
 // ==========================================
+import { useLocation } from "react-router-dom";
+
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const location = useLocation();
 
   useEffect(() => {
-  ReactGA.send({
-    hitType: "pageview",
-    page: window.location.pathname,
-  });
-}, []);
-  
+    ReactGA.send({
+      hitType: "pageview",
+      page: location.pathname,
+    });
+  }, [location]);
+
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-green-200">
       <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
