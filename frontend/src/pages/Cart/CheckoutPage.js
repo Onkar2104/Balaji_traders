@@ -1,5 +1,5 @@
 // src/pages/CheckoutPage.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { 
   ArrowLeft, CheckCircle2, Loader2, MapPin, 

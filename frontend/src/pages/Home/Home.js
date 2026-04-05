@@ -199,7 +199,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
 
             {/* Links */}
             <div className="hidden md:flex gap-4 text-gray-600 font-medium">
-              <a href="#" className="hover:text-green-600 transition">Home</a>
+              <a href="#home" className="hover:text-green-600 transition">Home</a>
               <a href="#categories" className="hover:text-green-600 transition">Categories</a>
               <a href="#offers" className="hover:text-green-600 transition">Offers</a>
             </div>
@@ -447,10 +447,10 @@ const Footer = () => (
       <h2 className="text-2xl font-bold text-white mb-4">Balaji<span className="text-orange-500">Traders</span></h2>
       <p className="mb-6">Your friendly neighborhood grocery store, now online.</p>
       <div className="flex justify-center flex-wrap gap-6 mb-8 text-sm">
-        <a href="#" className="hover:text-white transition-colors">About Us</a>
-        <a href="#" className="hover:text-white transition-colors">Contact</a>
-        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-        <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
+        <a href="/about" className="hover:text-white transition-colors">About Us</a>
+        <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+        <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms" className="hover:text-white transition-colors">Terms & Conditions</a>
       </div>
       <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} BalajiTraders. All rights reserved.</p>
     </div>
