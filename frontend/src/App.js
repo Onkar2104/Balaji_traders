@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import CheckoutPage from "./pages/Cart/CheckoutPage";
 import ReactGA from "react-ga4";
 
-ReactGA.initialize("G-8R10Y8Q7JY"); // replace with your ID
+ReactGA.initialize("G-8R10Y8Q7JY"); 
 
 function App() {
   return (
