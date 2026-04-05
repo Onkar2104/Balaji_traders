@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home/Home";
 import CheckoutPage from "./pages/Cart/CheckoutPage";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-8R10Y8Q7JY"); // replace with your ID
 
 function App() {
   return (

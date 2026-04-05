@@ -4,6 +4,8 @@ import { Search, ShoppingCart, User, Menu, X, Truck, ShieldCheck, Clock, Leaf, H
 import { useNavigate, useLocation } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 
+import ReactGA from "react-ga4";
+
 function importAll(r) { let images = {}; r.keys().forEach((item) => { images[item.replace('./', '')] = r(item); }); return images; } const images = importAll(require.context('../../assets', false, /\.(png|jpe?g|svg)$/));
 
 // ==========================================
@@ -466,6 +468,14 @@ const Footer = () => (
 // ==========================================
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+  ReactGA.send({
+    hitType: "pageview",
+    page: window.location.pathname,
+  });
+}, []);
+  
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-green-200">
       <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
